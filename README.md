@@ -16,16 +16,28 @@ Zonder notch (of met alleen een extern scherm) toont de app niets.
 3. Sleep **Notch Island** naar de map **Programma's**.
 4. Open Notch Island vanuit Programma's.
 
-## "Ontwikkelaar onbekend"
+## "Niet geopend" / "Not Opened"
 
-De eerste keer zegt macOS dat de app niet geopend kan worden, omdat de ontwikkelaar niet is geverifieerd. Dat klopt: de app staat niet in de App Store. Zo open je hem toch:
+De eerste keer zegt macOS dat het niet kon controleren of de app vrij is van malware. In het Engels heet die melding *"NotchIsland" Not Opened*. Dat is normaal: de app staat niet in de App Store en is niet bij Apple aangemeld. Zo open je hem toch.
 
-1. Klik in de melding op **Gereed** (niet op *Verplaats naar prullenmand*).
-2. Open **Systeeminstellingen → Privacy en beveiliging**.
-3. Scrol naar beneden. Bij "Notch Island is geblokkeerd" klik je op **Toch openen**.
-4. Bevestig met je wachtwoord of Touch ID en klik nog een keer op **Toch openen**.
+1. Klik in de melding op **Gereed** (Engels: **Done**). Klik **niet** op *Verplaats naar prullenmand* (*Move to Bin*).
+2. Open **Systeeminstellingen → Privacy en beveiliging** (Engels: **System Settings → Privacy & Security**).
+3. Scrol helemaal naar beneden naar **Beveiliging** (*Security*). Daar staat dat NotchIsland is geblokkeerd. Klik op **Toch openen** (*Open Anyway*).
+4. Bevestig met je wachtwoord of Touch ID, en klik in de nieuwe melding nog een keer op **Toch openen** (*Open Anyway*).
 
 Dit hoeft maar één keer.
+
+De knop **Toch openen** staat er ongeveer een uur nadat je de app probeerde te openen. Zie je hem niet? Open de app dan eerst nog een keer vanuit Programma's, klik op **Gereed** (*Done*), en kijk opnieuw.
+
+### Lukt het niet?
+
+Open **Terminal** (via Spotlight: ⌘-spatie, typ "Terminal"). Plak deze regel en druk op Enter:
+
+```
+xattr -dr com.apple.quarantine /Applications/NotchIsland.app
+```
+
+Je ziet geen bericht; dat is goed. Open daarna Notch Island gewoon vanuit Programma's. Deze regel haalt alleen de blokkade weg van deze ene app.
 
 ## Toestemmingen
 
